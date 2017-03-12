@@ -1,4 +1,5 @@
-/*txtStat.js
+/*txtStat
+* txtStat.js
 *
 *    Copyright (c) 2017 Yuji SODE <yuji.sode@gmail.com>
 *
