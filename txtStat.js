@@ -6,10 +6,6 @@
 *    See LICENSE or http://opensource.org/licenses/mit-license.php
 */
 //the interface for text character analysis.
-//
-//Yuji SODE 2017-03-12
-//tested on Firefox 52.0 (32-bit)
-//=========
 function txtStat(){
     //============================================================================
     var slf=window,W,r9=slf.Math.random().toFixed(9).replace(/\./g,''),
