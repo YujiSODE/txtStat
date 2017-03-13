@@ -10,7 +10,7 @@
 function txtStat(){
     //============================================================================
     var slf=window,W,r9=slf.Math.random().toFixed(9).replace(/\./g,''),
-        bd=slf.document.getElementsByTagName('body')[0],log,fm,stat,txtA,
+        bd=slf.document.getElementsByTagName('body')[0],_log,fm,stat,txtA,
         i=0,B=[],_rgb='#0000ff',_data={N:0},_size,cvsFlg,cvs,cvs2Id,rm,
         //this function is element generator
         f=function(elName,elId,targetId){
@@ -42,7 +42,7 @@ function txtStat(){
         objMax=function(o){
             //max and min: the max and min Unicode code point value in the given object
             //freq: the max frequency in the given object
-            var max=0,freq=0,min=0/*,el*/;
+            var max=0,freq=0,min=0;
             for(var el in o){
                 if(el!='N'){
                     max=max<+el?+el:max;
@@ -60,22 +60,29 @@ function txtStat(){
         //this function draws a graph, and returns log object
         getGraph=function(canvasId,data,rgb,size){
             var c=slf.document.getElementById(canvasId).getContext('2d'),
-                cw=c.canvas.width,ch=c.canvas.height,i=0,
+                cw=c.canvas.width,ch=c.canvas.height,i=0,d=0,
                 dx=(size.range!=0)?(cw*0.95)/size.range:0,
                 dy=(size.maxFreq!=0)?(ch*0.95)/size.maxFreq:0;
-            dx=!(dx<1)?dx:1;
-            c.strokeStyle=rgb,c.lineWidth=dx,c.beginPath();
-            while(i<size.range){
-                c.moveTo((i+0.5)*dx,ch),c.lineTo((i+0.5)*dx,ch-(!data[i+size.min]?0:+data[i+size.min][1])*dy),i+=1;
+            d=!(dx<1)?dx:1;
+            c.strokeStyle=rgb,c.lineWidth=d,c.beginPath();
+            for(var el in data){
+                if(el!='N'){
+                    c.moveTo((el-size.min+0.5)*d,ch),c.lineTo((el-size.min+0.5)*d,ch-data[el][1]*dy);
+                }
             }
             c.stroke();
-            return {data:slf.JSON.stringify(data),results:slf.JSON.stringify(size),color:rgb,log:slf.Date()};
+            //returned object
+            return {
+                data:slf.JSON.stringify(data),
+                results:size,
+                color:rgb,
+                log:slf.Date(),
+                xMax:{x:size.max,x16:data[size.max][2],char:data[size.max][0]},
+                xMin:{x:size.min,x16:data[size.min][2],char:data[size.min][0]},
+                dx:dx,
+                dy:dy
+            };
         };
-    //============================================================================
-    //this method returns log object
-    txtStat.log=function(){
-        return log;
-    };
     //============================================================================
     bd.id='bd'+r9;
     //form
@@ -109,14 +116,15 @@ function txtStat(){
             //reset canvas
             cvs.width=cvs.width;
             //draw and log
-            log=getGraph('txtStat_cvs'+r9,_data,_rgb,_size);
-            //optional graph: draw the graph result on another canvas
+            _log=getGraph('txtStat_cvs'+r9,_data,_rgb,_size);
+            //=== <optional graph: draw the graph result on another canvas> ===
             cvs2Id=slf.prompt('[optional] id of another canvas?');
             if(!!cvs2Id){
                 if(!!slf.document.getElementById(cvs2Id)){
                     getGraph(cvs2Id,_data,_rgb,_size);
                 }
             }
+            //=== </optional graph> ===
         }
     },true);
     //button to clear textarea
@@ -131,4 +139,8 @@ function txtStat(){
     B[5].addEventListener('click',function(){
         rm=fm.parentNode.removeChild(fm),rm=null;
     },true);
+    //============================================================================
+    return function(){
+        return _log;
+    };
 }
