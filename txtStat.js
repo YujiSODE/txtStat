@@ -7,9 +7,11 @@
 *    See LICENSE or http://opensource.org/licenses/mit-license.php
 */
 //the interface for text character analysis.
-function txtStat(){
+//FLG95: true|false; 95% of canvas width is shown when FLG95=true
+function txtStat(FLG95){
+    FLG95=!!FLG95;
     //============================================================================
-    var slf=window,W,r9=slf.Math.random().toFixed(9).replace(/\./g,''),
+    var slf=window,r9=slf.Math.random().toFixed(9).replace(/\./g,''),
         bd=slf.document.getElementsByTagName('body')[0],_log,fm,stat,txtA,
         i=0,B=[],_rgb='#0000ff',_data={N:0},_size,cvsFlg,cvs,cvs2Id,rm,
         //this function is element generator
@@ -17,6 +19,11 @@ function txtStat(){
             var t=slf.document.getElementById(targetId),E=slf.document.createElement(elName);
             E.id=elId;
             return t.appendChild(E);
+        },
+        //this function returns the decimal logarithm of a given number
+        Log10=function(n){
+            if(n<0){return NaN;}
+            return Math.log(n)*Math.LOG10E;
         },
         //this function returns function that returns result of character count as object
         txtCnt=function(){
@@ -63,14 +70,21 @@ function txtStat(){
                 cw=c.canvas.width,ch=c.canvas.height,i=0,d=0,
                 dx=(size.range!=0)?(cw*0.95)/size.range:0,
                 dy=(size.maxFreq!=0)?(ch*0.95)/size.maxFreq:0;
-            d=!(dx<1)?dx:1;
+            d=!(dx<1)?dx:-Log10(dx);
             c.strokeStyle=rgb,c.lineWidth=d,c.beginPath();
             for(var el in data){
                 if(el!='N'){
-                    c.moveTo((el-size.min+0.5)*d,ch),c.lineTo((el-size.min+0.5)*d,ch-data[el][1]*dy);
+                    c.moveTo((el-size.min+0.5)*dx,ch),c.lineTo((el-size.min+0.5)*dx,ch-data[el][1]*dy);
                 }
             }
             c.stroke();
+            //95% line
+            if(FLG95){
+                c.strokeStyle='#000',c.lineWidth=1,c.setLineDash([5,10]),c.beginPath();
+                c.moveTo(cw*0.95,ch),c.lineTo(cw*0.95,0);
+                c.stroke(),c.setLineDash([0]);
+                c.fillText('95% canvas width',cw*0.65,ch*0.1);
+            }
             //returned object
             return {
                 data:slf.JSON.stringify(data),
@@ -80,7 +94,8 @@ function txtStat(){
                 xMax:{x:size.max,x16:data[size.max][2],char:data[size.max][0]},
                 xMin:{x:size.min,x16:data[size.min][2],char:data[size.min][0]},
                 dx:dx,
-                dy:dy
+                dy:dy,
+                lineWidth:d
             };
         };
     //============================================================================
