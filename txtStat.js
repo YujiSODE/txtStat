@@ -62,7 +62,7 @@ function txtStat(FLG95){
                     min=min>+el?+el:min;
                 }
             }
-            return {max:+max,min:+min,maxFreq:+freq,range:max-min+1};
+            return {xMax:+max,xMin:+min,maxFreq:+freq,range:max-min+1};
         },
         //this function draws a graph, and returns log object
         getGraph=function(canvasId,data,rgb,size){
@@ -74,11 +74,11 @@ function txtStat(FLG95){
             c.strokeStyle=rgb,c.lineWidth=d,c.beginPath();
             for(var el in data){
                 if(el!='N'){
-                    c.moveTo((el-size.min+0.5)*dx,ch),c.lineTo((el-size.min+0.5)*dx,ch-data[el][1]*dy);
+                    c.moveTo((el-size.xMin+0.5)*dx,ch),c.lineTo((el-size.xMin+0.5)*dx,ch-data[el][1]*dy);
                 }
             }
             c.stroke();
-            //95% line
+            //95% line; when FLG95=true
             if(FLG95){
                 c.strokeStyle='#000',c.lineWidth=1,c.setLineDash([5,10]),c.beginPath();
                 c.moveTo(cw*0.95,ch),c.lineTo(cw*0.95,0);
@@ -91,8 +91,8 @@ function txtStat(FLG95){
                 results:size,
                 color:rgb,
                 log:slf.Date(),
-                xMax:{x:size.max,x16:data[size.max][2],char:data[size.max][0]},
-                xMin:{x:size.min,x16:data[size.min][2],char:data[size.min][0]},
+                xMax:{x:size.xMax,x16:data[size.xMax][2],char:data[size.xMax][0]},
+                xMin:{x:size.xMin,x16:data[size.xMin][2],char:data[size.xMin][0]},
                 dx:dx,
                 dy:dy,
                 lineWidth:d
@@ -104,7 +104,8 @@ function txtStat(FLG95){
     fm=f('form','fm'+r9,bd.id);
     bd.removeAttribute('id');
     stat=txtCnt();
-    txtA=f('textarea','txtA'+r9,fm.id);
+    //textarea for input
+    txtA=f('textarea','txtA'+r9,fm.id),txtA.wrap='off';
     while(i<6){
         //input tags: button and color
         B[i]=f('input','B'+i+'_'+r9,fm.id),B[i].type=i!=0?'button':'color',B[i].value=['#0000ff','Load','Analyze','Clear textarea','Reset loaded data','Close'][i],i+=1;
