@@ -7,7 +7,13 @@
 *    See LICENSE or http://opensource.org/licenses/mit-license.php
 */
 //the interface for text character analysis.
-//FLG95: true|false; 95% of canvas width is shown when FLG95=true
+/*
+* This function loads text data and make a graph of frequency against
+* the Unicode codepoints, and returns function that returns character
+* analysis result.
+*
+* FLG95: true|false; 95% of canvas width is shown when FLG95=true
+*/
 function txtStat(FLG95){
     FLG95=!!FLG95;
     //============================================================================
@@ -156,6 +162,7 @@ function txtStat(FLG95){
         rm=fm.parentNode.removeChild(fm),rm=null;
     },true);
     //============================================================================
+    //this function returns character analysis result
     return function(){
         return _log;
     };
