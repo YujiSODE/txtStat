@@ -97,8 +97,8 @@ function txtStat(FLG95){
                 results:size,
                 color:rgb,
                 log:slf.Date(),
-                xMax:{x:size.xMax,x16:data[size.xMax][2],char:data[size.xMax][0]},
-                xMin:{x:size.xMin,x16:data[size.xMin][2],char:data[size.xMin][0]},
+                xMax:{x:size.xMax,x16:data[size.xMax][2],char:data[size.xMax][0],xMaxFreq:data[size.xMax][1]},
+                xMin:{x:size.xMin,x16:data[size.xMin][2],char:data[size.xMin][0],xMinFreq:data[size.xMin][1]},
                 dx:dx,
                 dy:dy,
                 lineWidth:d
