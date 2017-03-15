@@ -8,8 +8,11 @@
 */
 //the interface for text character analysis.
 /*
+* This function loads text data and make a graph of frequency against
+* the Unicode codepoints, and returns function that returns character
+* analysis result.
+*
 * FLG95: true|false; 95% of canvas width is shown when FLG95=true
-* this function returns function, that returns character analysis result
 */
 function txtStat(FLG95){
     FLG95=!!FLG95;
