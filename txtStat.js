@@ -107,7 +107,7 @@ function txtStat(FLG95){
     //============================================================================
     bd.id='bd'+r9;
     //form
-    fm=f('form','fm'+r9,bd.id);
+    fm=f('form','fm'+r9,bd.id),fm.className='txtStat';
     bd.removeAttribute('id');
     stat=txtCnt();
     //textarea for input
