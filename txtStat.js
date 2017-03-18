@@ -19,7 +19,7 @@ function txtStat(FLG95){
     //============================================================================
     var slf=window,r9=slf.Math.random().toFixed(9).replace(/\./g,''),
         bd=slf.document.getElementsByTagName('body')[0],_log,fm,stat,txtA,
-        i=0,B=[],_rgb='#0000ff',_data={N:0},_size,cvsFlg,cvs,cvs2Id,rm,
+        i=0,B=[],_rgb='#0000ff',_data={N:0},_size,cvsFlg,cvs,cvs2Id,cvs2,cvs2W=0,rm,
         //this function is element generator
         f=function(elName,elId,targetId){
             var t=slf.document.getElementById(targetId),E=slf.document.createElement(elName);
@@ -133,7 +133,7 @@ function txtStat(FLG95){
             cvs=!cvsFlg?f('canvas','txtStat_cvs'+r9,fm.id):cvs;
             //style for canvas
             if(!cvsFlg){
-                cvs.style.cssText='background:#ffff;border:1px solid #000f;width:48vw;height:48vh';
+                cvs.style.cssText='background:#ffff;border:1px solid #000f;width:48vw;height:32vh';
             }
             //reset canvas
             cvs.width=cvs.width;
@@ -142,8 +142,13 @@ function txtStat(FLG95){
             //=== <optional graph: draw the graph result on another canvas> ===
             cvs2Id=slf.prompt('[optional] id of another canvas?');
             if(!!cvs2Id){
-                if(!!slf.document.getElementById(cvs2Id)){
-                    getGraph(cvs2Id,_data,_rgb,_size);
+                cvs2=slf.document.getElementById(cvs2Id);
+                if(!!cvs2){
+                    cvs2W=+slf.prompt('[optional] width (px) of another canvas?',cvs2.width);
+                    if(cvs2W!=cvs2.width&&!!cvs2W){
+                        cvs2.width=cvs2W;
+                    }
+                    _log=getGraph(cvs2Id,_data,_rgb,_size);
                 }
             }
             //=== </optional graph> ===
