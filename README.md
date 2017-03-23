@@ -65,7 +65,7 @@ This object has 9 values
    
 8. `dy`: true scale of y-axis.  
    
-9. `lineWidth`: width of bar g
+9. `lineWidth`: width of bar graph
 
 ## Optional settings
 * __Setting of function`txtStat(FLG95)`__  
