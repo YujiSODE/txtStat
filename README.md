@@ -15,8 +15,8 @@ and returns function that returns character analysis result.
 * `txtStat.js`
 
 ## How to use
-To activate interface:`var y=txtStat();`  
-To get character analysis result:`y();`
+1. To activate interface:`var y=txtStat();`  
+2. To get character analysis result:`y();`
 
 ## Interface
 1. __Textarea:__ a text input for analysis.
