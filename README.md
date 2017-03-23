@@ -37,9 +37,16 @@ and returns function that returns character analysis result.
 
 ## Character analysis result
 This is an object returned by a function, which returned by function`txtStat()`.  
-This object has 9 values:  
-1. `data`: JSON formatted loaded data with a value`N`indicating a cumulative frequency of text datasets.
-2. `results`:
+This object has 9 values  
+1. `data`: JSON formatted loaded data with a value`N`indicating a cumulative frequency of text datasets.  
+   
+2. `results`: a result of analysis.  
+   This is an object with 4 values
+   * `xMax`
+   * `xMin`
+   * `maxFreq`
+   * `range`
+   
 3. `color`: color of graph.
 4. `log`:
 5. `xMax`:
