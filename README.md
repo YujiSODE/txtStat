@@ -42,15 +42,24 @@ This object has 9 values
    
 2. `results`: a result of analysis.  
    This is an object with 4 values
-   * `xMax`:
-   * `xMin`:
-   * `maxFreq`:
-   * `range`:
+   * `xMax`: the max Unicode codepoint value in datasets.
+   * `xMin`: the min Unicode codepoint value in datasets.
+   * `maxFreq`: the max frequency.
+   * `range`: range of datasets.
    
-3. `color`: color of graph.
-4. `log`: a timestamp.
-5. `xMax`: the max Unicode codepoint value in loaded text datasets.
-6. `xMin`: the min Unicode codepoint value in loaded text datasets.
+3. `color`: color of graph.  
+   
+4. `log`: a timestamp.  
+   
+5. `xMax`: the max Unicode codepoint value in loaded text datasets.  
+   This is an object with 4 values\(`x`,`x16`,`char`, and`xMaxFreq`; see`xMin`\).  
+   
+6. `xMin`: the min Unicode codepoint value in loaded text datasets.  
+   `xMax`and`xMin` are objects with 4 values.
+   * `x`:
+   * `x16`:
+   * `char`:
+   * `xMaxFreq`|`xMinFreq`:
 7. `dx`: true scale of x-axis.
 8. `dy`: true scale of y-axis.
 9. `lineWidth`: graph
