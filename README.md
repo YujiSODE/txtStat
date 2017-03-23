@@ -57,12 +57,15 @@ This object has 9 values
 6. `xMin`: the min Unicode codepoint value in loaded text datasets.  
    `xMax`and`xMin` are objects with 4 values.
    * `x`: the Unicode codepoint value.
-   * `x16`: Unicode codepoint value in hexadecimal.
-   * `char`: the Unicode character.
-   * `xMaxFreq`\(`xMinFreq`\):
-7. `dx`: true scale of x-axis.
-8. `dy`: true scale of y-axis.
-9. `lineWidth`: graph
+   * `x16`: the Unicode codepoint value in hexadecimal.
+   * `char`: a character at the Unicode codepoint value.
+   * `xMaxFreq`\(`xMinFreq`\): character frequency.
+   
+7. `dx`: true scale of x-axis.  
+   
+8. `dy`: true scale of y-axis.  
+   
+9. `lineWidth`: width of bar g
 
 ## Optional settings
 * __Setting of function`txtStat(FLG95)`__  
