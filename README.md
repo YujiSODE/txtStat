@@ -38,15 +38,15 @@ and returns function that returns character analysis result.
 ## Character analysis result
 This is an object returned by a function, which returned by function`txtStat()`.  
 This object has 9 values:  
-1. data
-2. results
-3. color
-4. log
-5. xMax
-6. xMin
-7. dx
-8. dy
-9. lineWidth
+1. `data`: JSON formatted loaded data with a value`N`indicating a cumulative frequency of text datasets.
+2. `results`:
+3. `color`: color of graph.
+4. `log`:
+5. `xMax`:
+6. `xMin`:
+7. `dx`:
+8. `dy`:
+9. `lineWidth`:
 
 ## Optional settings
 * __Setting of function`txtStat(FLG95)`__  
