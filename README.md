@@ -8,7 +8,7 @@ https://github.com/YujiSODE/txtStat
 ______
 
 Function`txtStat(FLG95)`loads text data and make a graph of frequency against the Unicode codepoints,
-and returns function that returns character analysis result.
+and returns function that returns [character analysis result](#character-analysis-result).
 
 ## Script
 * `txtStat.js`
@@ -16,7 +16,7 @@ and returns function that returns character analysis result.
 ## How to use
 1. To activate interface:`var y=txtStat();`  
 2. To get character analysis result:`y();`  
-   An object is returned as a result.
+   An [object](#character-analysis-result) is returned as a result.
 
 ## Interface
 1. __Textarea:__ a text input for analysis.  
@@ -72,6 +72,6 @@ This object has 9 values
   
 * __Setting of another canvas tag to output__  
   A valid id of another canvas tag can be input when __Analyze__ button is clicked.  
-  Character analysis result is overwritten by result of another canvas tag when input id is valid.
+  [Character analysis result](#character-analysis-result) is overwritten by result of another canvas tag when input id is valid.
 * __Setting of change canvas width__  
   
