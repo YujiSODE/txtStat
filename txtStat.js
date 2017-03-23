@@ -28,7 +28,7 @@ function txtStat(FLG95){
         },
         //this function returns the decimal logarithm of a given number
         Log10=function(n){
-            if(n<0){return NaN;}
+            if(!(n>0)){return NaN;}
             return Math.log(n)*Math.LOG10E;
         },
         //this function returns function that returns result of character count as object
@@ -74,8 +74,8 @@ function txtStat(FLG95){
         getGraph=function(canvasId,data,rgb,size){
             var c=slf.document.getElementById(canvasId).getContext('2d'),
                 cw=c.canvas.width,ch=c.canvas.height,i=0,d=0,
-                dx=(size.range!=0)?(cw*0.95)/size.range:0,
-                dy=(size.maxFreq!=0)?(ch*0.95)/size.maxFreq:0;
+                dx=(size.range!=0)?(cw*0.95)/size.range:1,
+                dy=(size.maxFreq!=0)?(ch*0.95)/size.maxFreq:1;
             d=!(dx<1)?dx:-Log10(dx);
             c.strokeStyle=rgb,c.lineWidth=d,c.beginPath();
             for(var el in data){
