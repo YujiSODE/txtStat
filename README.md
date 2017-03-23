@@ -20,7 +20,7 @@ To get character analysis result:`y();`
 ## Interface
 1. __Textarea:__ a text input for analysis.
 2. __Color input:__ a color for a graph.
-3. __Load button;__ it loads text data in __Textarea__ as a set of data.
-4. __Analyze button;__ it analyzes all loaded text datasets and make a graph of frequency against the Unicode  
+3. __Load__ button; it loads text data in __Textarea__ as a set of data.
+4. __Analyze__ button; it analyzes all loaded text datasets and make a graph of frequency against the Unicode  
    codepoints on canvas tag. _Optionally another canvas tag is also available to output_.
-5. __:__
+5. __Clear textarea__ button; it clears only __Textarea__.
