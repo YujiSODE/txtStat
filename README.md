@@ -74,5 +74,5 @@ This object has 9 values
   A valid id of another canvas tag can be input when __Analyze__ button is clicked.  
   [Character analysis result](#character-analysis-result) is overwritten by result of another canvas tag when input id is valid.  
   
-* __Setting of change canvas width__  
+* __Setting of canvas width__  
   Width of another canvas tag can be changed when input id is valid.
