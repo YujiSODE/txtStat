@@ -49,11 +49,11 @@ This object has 9 values
    
 3. `color`: color of graph.
 4. `log`: a timestamp.
-5. `xMax`:
-6. `xMin`:
-7. `dx`:
-8. `dy`:
-9. `lineWidth`:
+5. `xMax`: the max Unicode codepoint value in loaded text datasets.
+6. `xMin`: the min Unicode codepoint value in loaded text datasets.
+7. `dx`: true scale of x-axis.
+8. `dy`: true scale of y-axis.
+9. `lineWidth`: graph
 
 ## Optional settings
 * __Setting of function`txtStat(FLG95)`__  
