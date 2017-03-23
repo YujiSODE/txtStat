@@ -42,13 +42,13 @@ This object has 9 values
    
 2. `results`: a result of analysis.  
    This is an object with 4 values
-   * `xMax`
-   * `xMin`
-   * `maxFreq`
-   * `range`  
+   * `xMax`:
+   * `xMin`:
+   * `maxFreq`:
+   * `range`:
    
 3. `color`: color of graph.
-4. `log`:
+4. `log`: a timestamp.
 5. `xMax`:
 6. `xMin`:
 7. `dx`:
