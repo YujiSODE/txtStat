@@ -10,7 +10,10 @@ ______
 Function`txtStat(FLG95)`loads text data and make a graph of frequency against the Unicode codepoints,
 and returns function that returns character analysis result.
 
-* `FLG95`: true|false; 95% of canvas width is shown when `FLG95`= true
+* `FLG95`: [optional] true | false; 95% of canvas width is shown when `FLG95`= true
 
 ## Script
 * `txtStat.js`
+## How to use
+`var y=txtStat();`
+## Interface
