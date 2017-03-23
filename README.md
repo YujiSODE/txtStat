@@ -45,7 +45,7 @@ This object has 9 values
    * `xMax`
    * `xMin`
    * `maxFreq`
-   * `range`
+   * `range`  
    
 3. `color`: color of graph.
 4. `log`:
