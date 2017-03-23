@@ -124,7 +124,7 @@ function txtStat(FLG95){
     B[1].addEventListener('click',function(){
         _data=stat(`${txtA.value}`);
     },true);
-    //button to analyze all text data
+    //button to analyze all text data and make a graph of frequency
     B[2].addEventListener('click',function(){
         if(_data.N>0){
             _size=objMax(_data);
