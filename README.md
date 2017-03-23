@@ -17,7 +17,7 @@ and returns function that returns character analysis result.
 ## How to use
 1. To activate interface:`var y=txtStat();`  
 2. To get character analysis result:`y();`  
-   An object
+   An object is returned as a result.
 
 ## Interface
 1. __Textarea:__ a text input for analysis.  
