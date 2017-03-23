@@ -26,3 +26,4 @@ To get character analysis result:`y();`
    codepoints on canvas tag. _Optionally another canvas tag is also available to output_.
 5. __Clear textarea__ button; it clears only "__Textarea__".
 6. __Reset loaded data__ button; it clears only loaded dataset by "__Load__ button".
+7. __Close__ button; it closes this interface.
