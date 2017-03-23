@@ -20,5 +20,5 @@ To get character analysis result:`y();`
 ## Interface
 1. __Textarea:__ a text input for analysis.
 2. __Color input:__ a color for a graph.
-3. __Load button:__ loading text data in __Textarea__ as a set of data.
-4. __
+3. __Load button;__ it loads text data in __Textarea__ as a set of data.
+4. __Analyze button;__ it analyze loaded text data,
