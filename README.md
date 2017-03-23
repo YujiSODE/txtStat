@@ -71,6 +71,7 @@ This object has 9 values
   `FLG95`: [optional] true | false; 95% of canvas width is shown when `FLG95`= true  
   
 * __Setting of another canvas tag to output__  
-  
+  A valid id of another canvas tag can be input when __Analyze__ button is clicked.  
+  Character analysis result is overwritten by result of another canvas tag when input id is valid.
 * __Setting of change canvas width__  
   
