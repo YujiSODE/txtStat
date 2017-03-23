@@ -26,7 +26,7 @@ and returns function that returns character analysis result.
 3. __Load__ button; it loads text data in "__Textarea__" as a set of data.  
    
 4. __Analyze__ button; it analyzes all loaded text datasets and make a graph of frequency against the Unicode  
-   codepoints on canvas tag. _Optionally another canvas tag is also available to output_.  
+   codepoints on canvas tag. [_Optionally another canvas tag is also available to output_](#optional-settings).  
    
 5. __Clear textarea__ button; it clears only "__Textarea__".  
    
@@ -35,7 +35,7 @@ and returns function that returns character analysis result.
 7. __Close__ button; it closes this interface.
 
 ## Character analysis result
-This is an object returned by a function, which returned by function`txtStat()`.  
+This is an object returned by a function, which is returned by function`txtStat(FLG95)`.  
 This object has 9 values  
 1. `data`: JSON formatted loaded data with a value`N`indicating a cumulative frequency of text datasets.  
    
@@ -51,7 +51,7 @@ This object has 9 values
 4. `log`: a timestamp.  
    
 5. `xMax`: the max Unicode codepoint value in loaded text datasets.  
-   This is an object with 4 values\(`x`,`x16`,`char`, and`xMaxFreq`; see`xMin`\).  
+   This is an object with 4 values\(`x`,`x16`,`char`, and`xMaxFreq`; _see 6_\.`xMin`\).  
    
 6. `xMin`: the min Unicode codepoint value in loaded text datasets.  
    `xMax`and`xMin` are objects with 4 values.
