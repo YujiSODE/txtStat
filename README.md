@@ -15,5 +15,7 @@ and returns function that returns character analysis result.
 ## Script
 * `txtStat.js`
 ## How to use
-`var y=txtStat();`
+To activate interface:`var y=txtStat();`  
+To get character analysis result:`y();`
 ## Interface
+
