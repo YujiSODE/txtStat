@@ -58,7 +58,7 @@ This object has 9 values
    * `x`: the Unicode codepoint value.
    * `x16`: the Unicode codepoint value in hexadecimal.
    * `char`: a character at the Unicode codepoint value.
-   * `xMaxFreq`\(`xMinFreq`\): character frequency.
+   * `xMaxFreq`|`xMinFreq`: character frequency.
    
 7. `dx`: true scale of x-axis.  
    
@@ -68,7 +68,7 @@ This object has 9 values
 
 ## Optional settings
 * __Setting of function`txtStat(FLG95)`__  
-  `FLG95`: `true`|`false`; 95% of canvas width is shown when `FLG95`= true  
+  `FLG95`: `true`|`false`; 95% of canvas width is shown when `FLG95 = true`.  
   
 * __Setting of another canvas tag to output__  
   A valid id of another canvas tag can be input when __Analyze__ button is clicked.  
