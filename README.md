@@ -8,7 +8,8 @@ https://github.com/YujiSODE/txtStat
 ______
 
 Function`txtStat(FLG95)`loads text data and make a graph of frequency against the Unicode codepoints,
-and returns function that returns [character analysis result](#character-analysis-result).
+and returns function that returns [character analysis result](#character-analysis-result).  
+![img](./)
 
 ## Script
 * `txtStat.js`
