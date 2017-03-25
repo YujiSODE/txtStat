@@ -9,7 +9,7 @@ ______
 
 Function`txtStat(FLG95)`loads text data and make a graph of frequency against the Unicode codepoints,
 and returns function that returns [character analysis result](#character-analysis-result).  
-![img](./)
+![img](./txtStat_screenshot.png)
 
 ## Script
 * `txtStat.js`
