@@ -62,7 +62,7 @@ This object has 9 values
    * `xMaxFreq`|`xMinFreq`: character frequency.
    
 7. `dx`: true scale of x-axis.  
-   Another width-extended canvas is recommended when `dx << 1`.  
+   [Another width-extended canvas](#optional-settings) is recommended when `dx << 1`.  
    
 8. `dy`: true scale of y-axis.  
    
