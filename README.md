@@ -34,7 +34,7 @@ and returns function that returns [character analysis result](#character-analysi
 6. __Reset loaded data__ button; it clears only loaded text datasets.  
    
 7. __Close__ button; it closes this interface.
-txtStat_screenshot.png
+
 ## Character analysis result
 This is an object returned by a function, which is returned by function`txtStat(FLG95)`.  
 This object has 9 values  
